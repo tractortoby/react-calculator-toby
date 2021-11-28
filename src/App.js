@@ -1,4 +1,6 @@
 import { useReducer } from "react";
+import DigitButton from "./DigitButton";
+import OperationButton from "./OperationButton";
 import "./styles.css";
 
 function reducer(state, { type, payload }) {
@@ -36,92 +38,25 @@ function App() {
       </div>
       <button className="span-two">AC</button>
       <button>DEL</button>
-      <button
-        onClick={() =>
-          dispatch({ type: "add-digit", payload: { operation: "÷" } })
-        }
-      >
-        ÷
-      </button>
-      <button
-        onClick={() => dispatch({ type: "add-digit", payload: { digit: 1 } })}
-      >
-        1
-      </button>
-      <button
-        onClick={() => dispatch({ type: "add-digit", payload: { digit: 2 } })}
-      >
-        2
-      </button>
-      <button
-        onClick={() => dispatch({ type: "add-digit", payload: { digit: 3 } })}
-      >
-        3
-      </button>
-      <button
-        onClick={() =>
-          dispatch({ type: "add-digit", payload: { operation: "*" } })
-        }
-      >
-        *
-      </button>
-      <button
-        onClick={() => dispatch({ type: "add-digit", payload: { digit: 4 } })}
-      >
-        4
-      </button>
-      <button
-        onClick={() => dispatch({ type: "add-digit", payload: { digit: 5 } })}
-      >
-        5
-      </button>
-      <button
-        onClick={() => dispatch({ type: "add-digit", payload: { digit: 6 } })}
-      >
-        6
-      </button>
-      <button
-        onClick={() =>
-          dispatch({ type: "add-digit", payload: { operation: "+" } })
-        }
-      >
-        +
-      </button>
-      <button
-        onClick={() => dispatch({ type: "add-digit", payload: { digit: 7 } })}
-      >
-        7
-      </button>
-      <button
-        onClick={() => dispatch({ type: "add-digit", payload: { digit: 8 } })}
-      >
-        8
-      </button>
-      <button
-        onClick={() => dispatch({ type: "add-digit", payload: { digit: 9 } })}
-      >
-        9
-      </button>
-      <button
-        onClick={() =>
-          dispatch({ type: "add-digit", payload: { operation: "-" } })
-        }
-      >
-        -
-      </button>
-      <button
-        onClick={() => dispatch({ type: "add-digit", payload: { digit: "." } })}
-      >
-        .
-      </button>
-      <button
-        onClick={() => dispatch({ type: "add-digit", payload: { digit: 0 } })}
-      >
-        0
-      </button>
+      <OperationButton dispatch={dispatch} operation="÷" />
+      <DigitButton dispatch={dispatch} digit="1" />
+      <DigitButton dispatch={dispatch} digit="2" />
+      <DigitButton dispatch={dispatch} digit="3" />
+      <OperationButton dispatch={dispatch} operation="*" />
+      <DigitButton dispatch={dispatch} digit="4" />
+      <DigitButton dispatch={dispatch} digit="5" />
+      <DigitButton dispatch={dispatch} digit="6" />
+      <OperationButton dispatch={dispatch} operation="+" />
+      <DigitButton dispatch={dispatch} digit="7" />
+      <DigitButton dispatch={dispatch} digit="8" />
+      <DigitButton dispatch={dispatch} digit="9" />
+      <OperationButton dispatch={dispatch} operation="-" />
+      <DigitButton dispatch={dispatch} digit="." />
+      <DigitButton dispatch={dispatch} digit="0" />
       <button className="span-two">=</button>
     </div>
   );
 }
 
 export default App;
+
